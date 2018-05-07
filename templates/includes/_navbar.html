@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="">ㄅㄔㄩㄈ bciyuf</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a id="index" class="nav-link" href="/">首頁</a></li>
+        <li class="nav-item"><a id="about" class="nav-link" href="/about">關於</a></li>
+        <li class="nav-item"><a id="feedbacks" class="nav-link" href="/feedbacks">回饋</a></li>
+        <li class="nav-item"><a id="timetable" class="nav-link" href="/timetable">時間表</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% if session.logged_in %}
+        <li class="nav-item"><a id="dashboard" class="nav-link" href="/dashboard">資訊</a></li>
+        <li class="nav-item"><a id="logout" class="nav-link" href="/logout">登出</a></li>
+        {% else %}
+        <li class="nav-item"><a id="register" class="nav-link" href="/register">註冊</a></li>
+        <li class="nav-item"><a id="login" class="nav-link" href="/login">登入</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>

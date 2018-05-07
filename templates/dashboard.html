@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>資訊 <hr><small> 歡迎 {{session.username}} 來到全國最大的柏辰約飯系統</small></h1>
+  <a class="btn btn-danger btn-lg" href="/date"> 約</a>
+  <hr>
+  <table class="table table-striped">
+    <tr>
+      <th>編號</th>
+      <th>標題</th>
+      <th>使用者</th>
+      <th>日期</th>
+      <th></th>
+      <th></th>
+    </tr>
+    {% for feedback in feedbacks %}
+      <tr>
+        <td>{{feedback.id}}</td>
+        <td>{{feedback.title}}</td>
+        <td>{{feedback.author}}</td>
+        <td>{{feedback.create_date}}</td>
+        <td><a href="edit_feedback/{{feedback.id}}" class="btn btn-default pull-right">編輯</a></td>
+        <td>
+          <form action="{{url_for('delete_feedback', id=feedback.id)}}" method="post">
+            <input type="hidden" name="_method" value="刪除">
+            <input type="submit" value="刪除" class="btn btn-danger">
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

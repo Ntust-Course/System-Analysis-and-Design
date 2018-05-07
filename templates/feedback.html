@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>{{feedback.title}}</h1>
+  <small>作者 {{feedback.author}} 時間 {{feedback.create_date}}</small>
+  <hr>
+  <div>
+    {{feedback.content | safe}}
+  </div>
+{% endblock %}

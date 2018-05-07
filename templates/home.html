@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <h1>全國最大的柏辰約飯系統上線啦</h1>
+    <p class="lead">專門為大家設計的約柏辰吃飯系統</p>
+    {% if session.logged_in == NULL %}
+      <a href="/register" class="btn btn-primary btn-lg">註冊</a>
+      <a href="/login" class="btn btn-success btn-lg">登入</a>
+    {% else %}
+      <a href="/date" class="btn btn-danger btn-lg">約</a>
+    {% endif %}
+  </div>
+{% endblock %}
