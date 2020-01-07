@@ -1,4 +1,4 @@
-Flask==0.12.2
+Flask==1.0
 WTForms==2.1
 WTForms-Components==0.10.3
 passlib==1.7.1
