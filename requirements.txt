@@ -1,4 +1,4 @@
 Flask==0.12.2
-WTForms==2.1
+WTForms==2.3.0
 WTForms-Components==0.10.3
 passlib==1.7.1
